@@ -14,70 +14,81 @@
   </head>
 
   <body>
-    <img src="../../../assets/W3-real-estate-sunscreen-2.jpg" id="bg-image" />
+    <!-- <img src="../../../assets/W3-real-estate-sunscreen-2.jpg" id="bg-image" /> -->
+    <div class="super-wrapper">
+      <!-- <img class="logo" src="../../../assets/logo.PNG" alt="wsquare-logo" /> -->
 
-    <div class="main-container">
-      <div class="header-text">
-        <p>Get in Touch!</p>
-      </div>
-      <div class="container">
-        <div class="main-content">
-          <div class="main-content-left">
-            <img src="../../../assets/phone-call-5826.svg" />
-            <p style="margin-bottom: 0; margin-top: 0">
-              <a href="tel:8087092324">+91 8087092324</a>
-            </p>
-            <p style="margin-bottom: 0; margin-top: 0">
-              <a href="tel:9403944507">+91 9403944507</a>
-            </p>
-            <div class="email-wrap">
-              <img src="../../../assets/email-96.png" />
-              <p style="margin-bottom: 0; margin-top: 0">
-                <a href="#">wsquare.data@gmail.com</a>
+      <div class="main-container">
+        <img class="logo" src="../../../assets/logo.PNG" alt="wsquare-logo" />
+        <div class="header-text">
+          <p>Get in Touch!</p>
+        </div>
+        <div class="container">
+          <div class="main-content">
+            <form
+              [formGroup]="contactForm"
+              (submit)="onSubmit(contactForm.value)"
+            >
+              <div class="main-content-right">
+                <input
+                  type="text"
+                  name="name"
+                  formControlName="name"
+                  placeholder="Enter your name"
+                />
+                <div
+                  class="alert"
+                  *ngIf="
+                    contactForm.controls.name.touched &&
+                    !contactForm.controls.name.valid
+                  "
+                >
+                  <span>Name is required.</span>
+                </div>
+                <input
+                  type="text"
+                  name="phoneNumber"
+                  formControlName="phoneNumber"
+                  placeholder="Enter phone number"
+                />
+                <div
+                  class="alert"
+                  *ngIf="
+                    contactForm.controls.phoneNumber.touched &&
+                    !contactForm.controls.phoneNumber.valid
+                  "
+                >
+                  <span> Phone Number is required.</span>
+                </div>
+                <button type="submit" class="submit-button">SUBMIT</button>
+              </div>
+            </form>
+
+            <div class="main-content-left">
+              <div class="phone-wrap">
+                <img class="phone-icon" src="../../../assets/phone.png" />
+                <div class="telephones">
+                  <p style="margin-bottom: 0; margin-top: 0">
+                    <a href="tel:8087092324">+91 8087092324</a>
+                  </p>
+                  <p style="margin-bottom: 0; margin-top: 0">
+                    <a href="tel:9403944507">+91 9403944507</a>
+                  </p>
+                </div>
+              </div>
+              <div class="email-wrap">
+                <img class="email-icon" src="../../../assets/email.png" />
+                <div class="emails">
+                  <p style="margin-bottom: 0; margin-top: 0">
+                    <a href="#">sales@wsquareproperties.com</a>
+                  </p>
+                </div>
+              </div>
+              <p class="bottom-text" style="margin-bottom: 0">
+                Feel free to call us!
               </p>
             </div>
-            <p style="margin-bottom: 0">
-              Feel free to contact us for more information.
-            </p>
           </div>
-          <form
-            [formGroup]="contactForm"
-            (submit)="onSubmit(contactForm.value)"
-          >
-            <div class="main-content-right">
-              <input
-                type="text"
-                name="name"
-                formControlName="name"
-                placeholder="Enter your name"
-              />
-              <div
-                class="alert"
-                *ngIf="
-                  contactForm.controls.name.touched &&
-                  !contactForm.controls.name.valid
-                "
-              >
-                <span>Name is required.</span>
-              </div>
-              <input
-                type="text"
-                name="phoneNumber"
-                formControlName="phoneNumber"
-                placeholder="Enter phone number"
-              />
-              <div
-                class="alert"
-                *ngIf="
-                  contactForm.controls.phoneNumber.touched &&
-                  !contactForm.controls.phoneNumber.valid
-                "
-              >
-                <span> Phone Number is required.</span>
-              </div>
-              <button type="submit" class="submit-button">SUBMIT</button>
-            </div>
-          </form>
         </div>
       </div>
     </div>

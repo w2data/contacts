@@ -1,10 +1,13 @@
 body {
   margin: 0;
   padding: 0;
-  font-family: Helvetica, sans-serif;
+  font-family: "Asap", sans-serif;
+  /* background: #cacbcd;
+  height: 100vh;
+  overflow-y: hidden; */
 }
 
-#bg-image {
+/* #bg-image {
   position: fixed;
   left: 0;
   top: 0;
@@ -14,8 +17,13 @@ body {
 
   width: 100%;
   height: auto;
-}
+} */
 
+.logo {
+  width: 150px;
+  height: 200px;
+  /* position: absolute; */
+}
 .main-container {
   display: flex;
   flex-direction: column;
@@ -24,33 +32,37 @@ body {
 }
 
 .container {
-  margin-top: 50px;
-  background-color: #f47217;
-  background-image: linear-gradient(#f33900, rgb(255, 115, 0));
-  height: 300px;
-  width: 650px;
+  margin-top: 100px;
+  background-color: #114775;
+  /* background-color: #f47217; */
+  /* background-image: linear-gradient(#f33900, rgb(255, 115, 0)); */
+  height: 350px;
+  width: 600px;
   position: relative;
 }
 
 .main-content {
   background-color: white;
-  height: 350px;
-  width: 550px;
+  height: 430px;
+  width: 450px;
   position: absolute;
-  left: 8%;
-  bottom: -8%;
+  left: 12.5%;
+  bottom: -10%;
   display: flex;
+  flex-direction: column;
   align-items: center;
-  box-shadow: 5px 10px 18px #888888;
+  justify-content: center;
+  box-shadow: 38px 38px 26px #2e2d2d;
 }
 
 .header-text {
-  margin-top: 80px;
+  margin-top: -50px;
   text-align: center;
-  color: rgb(32, 196, 203);
-  font-size: 40px;
+  /* color: rgb(32, 196, 203); */
+  /* font-size: 40px; */
   z-index: 999;
-  color: #f43b01;
+  /* color: #f43b01; */
+  color: #114775;
 }
 
 .header-text p {
@@ -64,45 +76,70 @@ body {
   text-align: center;
 }
 
-img {
+.phone-icon,
+.email-icon {
   width: 30px;
   height: 30px;
 }
 
 .email-wrap {
+  display: flex;
   margin-top: 10px;
 }
 
+.emails,
+.telephones {
+  margin-left: 30px;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+  font-family: "Asap", sans-serif;
+}
+
+.phone-wrap {
+  display: flex;
+}
+
 .main-content-left {
-  width: 50%;
+  /* width: 50%; */
   margin-left: 10px;
   font-family: "Asap", sans-serif;
+  margin-top: 30px;
 }
 
 .main-content-right {
   /* width: 144%; */
   display: flex;
   flex-direction: column;
+  align-items: center;
 }
 
 input {
   margin: 5px 0 5px 0px;
-  border: 3px solid lightgray;
+  border: none;
+  background-color: #e1e1e1;
+  border-radius: 5px;
   padding: 7px;
-  width: 115%;
+  width: 145%;
+  margin-bottom: 20px;
   font-family: "Asap", sans-serif;
 }
 
 .submit-button {
   font-weight: bold;
-  width: 40%;
-  padding: 5px;
-  background: #f33900;
-  background-image: linear-gradient(to bottom right, #f33900, rgb(255, 115, 0));
+  width: 90%;
+  padding: 7px 10px;
+  /* background: #f33900; */
+  background-color: #114775;
+  /* background-image: linear-gradient(to bottom right, #f33900, rgb(255, 115, 0)); */
   border: none;
   margin-top: 10px;
   color: white;
   font-family: "Asap", sans-serif;
+  margin-bottom: 30px;
+  border-radius: 8px;
 }
 
 .alert {
@@ -110,13 +147,19 @@ input {
   font-size: 12px;
 }
 
+.bottom-text {
+  text-align: center;
+  color: #114775;
+  font-size: 25px;
+}
+
 /* MEDIA QUERIES */
 
 @media only screen and (max-width: 600px) {
   .container {
-    margin-top: 50px;
-    background-color: #f47217;
-    background-image: linear-gradient(#f33900, rgb(255, 115, 0));
+    margin-top: 70px;
+    background-color: #114775;
+    /* background-image: linear-gradient(#f33900, rgb(255, 115, 0)); */
     height: 300px;
     width: 550px;
     position: relative;
@@ -125,19 +168,18 @@ input {
   .main-content {
     background-color: white;
     height: 350px;
-    width: 450px;
+    width: 400px;
     position: absolute;
-    left: 9%;
+    left: 14%;
     bottom: -8%;
-    display: flex;
+    /* display: flex;
     flex-direction: column-reverse;
     justify-content: center;
     align-items: center;
-    box-shadow: 5px 10px 18px #888888;
+    box-shadow: 5px 10px 18px #888888; */
   }
 
-  .main-content-right {
-    /* width: 144%; */
+  /* .main-content-right {
     display: flex;
     flex-direction: column;
     width: 250px;
@@ -147,22 +189,30 @@ input {
     margin-left: 10px;
     font-family: "Asap", sans-serif;
     margin-top: 40px;
-  }
+  } */
 
-  input {
+  /* input {
     margin: 5px 0 5px 0px;
     border: 3px solid lightgray;
     padding: 7px;
     width: 95%;
     font-family: "Asap", sans-serif;
-  }
+  } */
 }
 
 @media only screen and (max-width: 450px) {
+  .logo {
+    width: 100px;
+    height: 150px;
+  }
+
+  .header-text p {
+    font-size: 40px;
+  }
   .container {
-    margin-top: 50px;
-    background-color: #f47217;
-    background-image: linear-gradient(#f33900, rgb(255, 115, 0));
+    margin-top: 70px;
+    background-color: #114775;
+    /* background-image: linear-gradient(#f33900, rgb(255, 115, 0)); */
     height: 300px;
     width: 350px;
     position: relative;
@@ -170,20 +220,19 @@ input {
 
   .main-content {
     background-color: white;
-    height: 380px;
+    min-height: 380px;
     width: 250px;
     position: absolute;
     left: 14%;
     bottom: -12%;
-    display: flex;
+    /* display: flex;
     flex-direction: column-reverse;
     justify-content: center;
     align-items: center;
-    box-shadow: 5px 10px 18px #888888;
+    box-shadow: 5px 10px 18px #888888; */
   }
 
   .main-content-right {
-    /* width: 144%; */
     display: flex;
     flex-direction: column;
     width: 200px;
@@ -192,7 +241,7 @@ input {
     width: 87%;
     margin-left: 10px;
     font-family: "Asap", sans-serif;
-    margin-top: 40px;
+    margin-top: 20px;
   }
 
   input {
@@ -200,7 +249,28 @@ input {
     border: 3px solid lightgray;
     padding: 7px;
     width: 90%;
+    border: none;
     font-family: "Asap", sans-serif;
+  }
+
+  .submit-button {
+    width: 50%;
+    margin-bottom: 15px;
+  }
+
+  .phone-wrap,
+  .email-wrap {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .telephones,
+  .emails {
+    margin: 0;
+  }
+
+  .bottom-text {
+    font-size: 20px;
   }
 }
 
